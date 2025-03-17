@@ -22,7 +22,7 @@ export const HeroSection = () => {
         padding: "20px",
       }}
     >
-      <h2>Get the latest football stats and news</h2>
+      <h2 className="titles">Get the latest football stats and news</h2>
     </div>
   );
 };

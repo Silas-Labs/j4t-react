@@ -8,12 +8,11 @@ export const Fixtures = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetch(
-        "https://f4bc-41-81-197-188.ngrok-free.app/api/fixtures"
-      )
+      await fetch("https://f4bc-41-81-197-188.ngrok-free.app/api/fixtures")
         .then((res) => res.json())
         .then((out) => setFixtures(out))
         .catch((err) => {
+          console.log(err);
           setError("Failed to load fixtures. Please try again.");
         });
     };
@@ -34,7 +33,7 @@ export const Fixtures = () => {
   }, []);
 */
   return (
-    <section className="flex flex-col items-center">
+    <div className="flex flex-col items-center flex-1 pt-2 titles">
       {/* Styled Title */}
       <h2
         className="fixtures-title"
@@ -79,7 +78,7 @@ export const Fixtures = () => {
           </p>
         )}
       </div>
-    </section>
+    </div>
   );
 };
 

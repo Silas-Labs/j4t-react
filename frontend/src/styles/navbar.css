@@ -1,0 +1,57 @@
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    /* Equivalent to font-medium */
+    color: #000;
+    /* Tailwind's text-gray-600 */
+}
+
+.nav-links>li>a {
+    padding: 3px;
+    margin-right: 2px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links>li>a:active {
+    padding: 3px;
+    margin-right: 2px;
+    position: relative;
+    text-decoration: none;
+    color: var(--fern-green);
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links>li>a:hover {
+    color: var(--fern-green);
+    position: relative;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link-active {
+    border-radius: 0.5rem;
+    border-width: 2px;
+    color: var(--fern-green)
+}
+
+
+.nav-links>li>a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    /* Position the underline */
+    width: 0;
+    height: 2px;
+    background-color: var(--fern-green);
+    /* Tailwind's blue-500 */
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links>li>a:hover::after {
+    width: 100%;
+}

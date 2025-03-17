@@ -6,21 +6,29 @@ import { Partners } from "./components/Partners";
 import { Schedules } from "./components/Schedules";
 import { News } from "./components/News";
 import { BrowserRouter, Route, Routes } from "react-router";
+import { HeroSection } from "./components/Hero";
+import { Clubs } from "./components/Clubs";
+import Stats from "./components/Stats";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/fixtures" element={<Fixtures />} />
-          <Route path="/news" element={<News />} />
-          <Route path="/schedules" element={<Schedules />} />
-        </Routes>
-      </BrowserRouter>
-      <Partners />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <div className="app-container flex flex-col h-screen">
+        <Navbar />
+        <div className="flex-1 pt-12">
+          <Routes>
+            <Route path="/" element={<HeroSection />} />
+            <Route path="/fixtures" element={<Fixtures />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/schedules" element={<Schedules />} />
+            <Route path="/clubs" element={<Clubs />} />
+            <Route path="/stats" element={<Stats />} />
+          </Routes>
+        </div>
+        <Partners />
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
 

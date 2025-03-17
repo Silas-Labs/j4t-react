@@ -11,5 +11,22 @@
 
 @theme {
     --color-fern-green: #213706;
-    --color-filter: #3D4244
+    --color-filter: #3D4244;
+    --color-footer: #DBDBDB
+}
+
+:root {
+    --fern-green: var(--color-fern-green)
+}
+
+.titles {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.images {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
 }

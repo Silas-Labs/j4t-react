@@ -1,8 +1,11 @@
 import React from "react";
+import "../styles/navbar.css";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 export const Navbar = () => {
+  let url = useLocation();
   return (
-    <nav className="bg-transparent flex flex-row w-full">
+    <nav className="bg-gradient-to-b from-white/60 to-white/10 backdrop-blur-md flex flex-row w-full shadow-lg mb-1 fixed top-0 left-0 z-100">
       {/* Logo Section */}
       <div>
         <img
@@ -13,21 +16,47 @@ export const Navbar = () => {
       </div>
 
       {/* Navigation Section */}
-      <ul className=" flex flex-row w-full justify-center gap-x-8 items-center">
+      <ul className="nav-links flex flex-row w-full justify-center gap-x-8 items-center ">
         <li>
-          <a href="/">Home</a>
+          <Link
+            to="/"
+            className={url.pathname == "/" ? "nav-link-active" : ""}
+            onClick={() => console.log("Params: ", url)}
+          >
+            Home
+          </Link>
         </li>
         <li>
-          <a href="/clubs">Clubs</a>
+          <Link
+            to="/clubs"
+            className={url.pathname == "/clubs" ? "nav-link-active" : ""}
+          >
+            Clubs
+          </Link>
         </li>
         <li>
-          <a href="/schedules">Schedules</a>
+          <Link
+            to="/schedules"
+            className={url.pathname == "/schedules" ? "nav-link-active" : ""}
+          >
+            Schedules
+          </Link>
         </li>
         <li>
-          <a href="/stats">Stats</a>
+          <Link
+            to="/stats"
+            className={url.pathname == "/stats" ? "nav-link-active" : ""}
+          >
+            Stats
+          </Link>
         </li>
         <li>
-          <a href="/news">News</a>
+          <Link
+            to="/news"
+            className={url.pathname == "/news" ? "nav-link-active" : ""}
+          >
+            News
+          </Link>
         </li>
       </ul>
     </nav>
