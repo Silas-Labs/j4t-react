@@ -1,7 +1,7 @@
 import React from "react";
 import newsgo from "../assets/newsgo.jpg"; // Ensure correct path
 
-const HeroSection = () => {
+export const HeroSection = () => {
   return (
     <div
       className="hero-section"
@@ -26,5 +26,3 @@ const HeroSection = () => {
     </div>
   );
 };
-
-export default HeroSection;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import TeamCard from "./TeamCard";
+import { TeamCard } from "./TeamCard";
 
-const Fixtures = () => {
+export const Fixtures = () => {
   const [fixtures, setFixtures] = useState(null);
   const [error, setError] = useState(null);
 
@@ -82,8 +82,6 @@ const Fixtures = () => {
     </section>
   );
 };
-
-export default Fixtures;
 
 // <div key={fixture.id} className="fixture-card">
 //   <h3>

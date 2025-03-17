@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+export const Navbar = () => {
   return (
     <nav className="bg-transparent flex flex-row w-full">
       {/* Logo Section */}
