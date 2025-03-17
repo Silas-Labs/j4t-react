@@ -5,24 +5,20 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 export const Navbar = () => {
   let url = useLocation();
   return (
-    <nav className="bg-gradient-to-b from-white/60 to-white/10 backdrop-blur-md flex flex-row w-full shadow-lg mb-1 fixed top-0 left-0 z-100">
+    <nav className="bg-gradient-to-b from-white/60 to-white/10 backdrop-blur-md flex flex-row w-screen shadow-lg mb-1 fixed top-0 left-0 z-100">
       {/* Logo Section */}
-      <div>
+      <div className="flex items-center px-4">
         <img
           src="/src/assets/ligss.png"
           alt="Logo"
-          style={{ height: "50px", width: "auto", maxWidth: "100px" }}
+          className="h-12 w-auto max-w-[100px] object-contain"
         />
       </div>
 
       {/* Navigation Section */}
       <ul className="nav-links flex flex-row w-full justify-center gap-x-8 items-center ">
         <li>
-          <Link
-            to="/"
-            className={url.pathname == "/" ? "nav-link-active" : ""}
-            onClick={() => console.log("Params: ", url)}
-          >
+          <Link to="/" className={url.pathname == "/" ? "nav-link-active" : ""}>
             Home
           </Link>
         </li>

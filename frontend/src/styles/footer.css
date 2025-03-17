@@ -1,0 +1,21 @@
+.sub-titles {
+    color: black;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.h3 {
+    color: black;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.quick-links {
+    color: blue;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.quick-links:hover {
+    font-weight: 400;
+}
