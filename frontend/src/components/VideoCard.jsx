@@ -1,6 +1,6 @@
 import React from "react";
 
-const Video = ({ video, details }) => {
+export const Video = ({ video, details }) => {
   return (
     <div className="flex flex-row w-full justify-evenly items-center ">
       <iframe
@@ -13,5 +13,3 @@ const Video = ({ video, details }) => {
     </div>
   );
 };
-
-export default Video;

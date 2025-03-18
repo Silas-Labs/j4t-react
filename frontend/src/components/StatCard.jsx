@@ -1,6 +1,6 @@
 import React from "react";
 
-const StatCard = ({ title, tally, player_image, player_name }) => {
+export const StatCard = ({ title, tally, player_image, player_name }) => {
   return (
     <div className="card bg-base-100 w-42 shadow-sm">
       <figure>
@@ -13,5 +13,3 @@ const StatCard = ({ title, tally, player_image, player_name }) => {
     </div>
   );
 };
-
-export default StatCard;

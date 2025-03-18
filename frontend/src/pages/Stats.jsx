@@ -1,7 +1,8 @@
 import React from "react";
 import "../styles/stats.css";
-import StatCard from "./StatCard";
-const Stats = () => {
+import { ClubStats, PlayerStats, StatCard } from "../components";
+
+function Stats() {
   return (
     <div className="flex flex-col h-full w-full justify-center ">
       <div className="hero justify-end text-white mr-auto pl-20 titles">
@@ -13,8 +14,10 @@ const Stats = () => {
         tally="28"
         title="Goals"
       />
+      <PlayerStats />
+      <ClubStats />
     </div>
   );
-};
+}
 
 export default Stats;

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import Player from "./Player";
+import { Player } from "./PlayerCard";
 import api from "../services/apiAxios";
 
-const FeaturedPlayer = () => {
+export const FeaturedPlayer = () => {
   const [player, setPlayer] = useState([]);
   const [error, setError] = useState("");
 
@@ -33,12 +33,10 @@ const FeaturedPlayer = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-row items-center justify-evenly">
+    <div className="w-full flex flex-row items-center justify-evenly py-2">
       {player.map((it) => (
         <Player player={it.strThumb} name={it.strPlayer} key={it.idPlayer} />
       ))}
     </div>
   );
 };
-
-export default FeaturedPlayer;

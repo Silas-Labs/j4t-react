@@ -1,6 +1,6 @@
 import React from "react";
 
-const Player = ({ player, name }) => {
+export const Player = ({ player, name }) => {
   return (
     <div className="avatar w-36 rounded-2xl shadow-xl">
       <img
@@ -11,5 +11,3 @@ const Player = ({ player, name }) => {
     </div>
   );
 };
-
-export default Player;

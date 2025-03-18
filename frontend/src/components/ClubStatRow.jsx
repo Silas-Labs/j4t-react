@@ -1,6 +1,6 @@
 import React from "react";
 
-const ClubStatRow = () => {
+export const ClubStatRow = () => {
   return (
     <tr>
       <td>1</td>
@@ -25,5 +25,3 @@ const ClubStatRow = () => {
     </tr>
   );
 };
-
-export default ClubStatRow;

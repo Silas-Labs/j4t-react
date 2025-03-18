@@ -1,6 +1,6 @@
 import React from "react";
 
-const PlayerStats = () => {
+export const PlayerStats = () => {
   return (
     <div className="w-full h-full flex flex-col bg-fern-green items-center">
       <span className=" text-white title p-2 self-start">Player Stats</span>
@@ -46,5 +46,3 @@ const PlayerStats = () => {
     </div>
   );
 };
-
-export default PlayerStats;

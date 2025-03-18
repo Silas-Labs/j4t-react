@@ -33,7 +33,7 @@ export const Fixtures = () => {
   }, []);
 */
   return (
-    <div className="flex flex-col items-center flex-1 pt-2 titles">
+    <div className="flex flex-col items-center flex-1 py-2 titles">
       {/* Styled Title */}
       <h2
         className="fixtures-title"

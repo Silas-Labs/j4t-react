@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Video from "./Video";
+import { Video } from "./VideoCard";
 import "../styles/videos.css";
 import api from "../services/apiAxios";
-const LatestVideos = () => {
+
+export const LatestVideos = () => {
   const [news, setNews] = useState([]);
   const [error, setError] = useState("");
 
@@ -23,7 +24,7 @@ const LatestVideos = () => {
   }, []);
   return (
     <div className="w-full flex flex-col p-2 bg-fern-green text-white">
-      <span className="sub-titles pb-2 text-white">LATEST VIDEOS</span>
+      <span className="sub-titles pb-2 !text-white">LATEST VIDEOS</span>
       <Video
         video="https://www.youtube.com/embed/vsWLzHtGqpc"
         details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
@@ -36,5 +37,3 @@ const LatestVideos = () => {
     </div>
   );
 };
-
-export default LatestVideos;

@@ -1,7 +1,7 @@
 import React from "react";
-import ClubStatRow from "./ClubStatRow";
+import { ClubStatRow } from "./ClubStatRow";
 
-const ClubStats = () => {
+export const ClubStats = () => {
   return (
     <div className="flex flex-col items-center">
       <table className="table w-1/2">
@@ -20,5 +20,3 @@ const ClubStats = () => {
     </div>
   );
 };
-
-export default ClubStats;
