@@ -44,7 +44,7 @@ export const Fixtures = () => {
 
       <div className="flex flex-col justify-center">
         {error ? (
-          <p>{error}</p>
+          <p className="h3">{error}</p>
         ) : fixtures === null ? (
           <p>Loading fixtures...</p>
         ) : fixtures.length > 0 ? (

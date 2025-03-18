@@ -9,6 +9,10 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import { HeroSection } from "./components/Hero";
 import { Clubs } from "./components/Clubs";
 import Stats from "./components/Stats";
+import FeaturedPlayer from "./components/FeaturedPlayer";
+import LatestVideos from "./components/LatestVideos";
+import PlayerStats from "./components/PlayerStats";
+import ClubStats from "./components/ClubStats";
 
 function App() {
   return (
@@ -22,7 +26,8 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/schedules" element={<Schedules />} />
             <Route path="/clubs" element={<Clubs />} />
-            <Route path="/stats" element={<Stats />} />
+            <Route path="/stats" element={<ClubStats />} />
+            <Route path="/players" element={<FeaturedPlayer />} />
           </Routes>
         </div>
         <Partners />

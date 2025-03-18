@@ -1,0 +1,19 @@
+.title {
+    color: rgb(226, 223, 218);
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.h3 {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.link {
+    color: blue;
+    text-decoration: none;
+}
+
+.link:hover {
+    font-weight: 500;
+}

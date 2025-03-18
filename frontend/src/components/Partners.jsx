@@ -6,9 +6,9 @@ export const Partners = () => {
     eager: true,
   });
   return (
-    <div className="w-full flex flex-col items-center bg-fern-green titles pb-2">
+    <div className="w-full flex flex-col items-center bg-fern-green titles pb-3">
       <span className="text-white">Partners</span>
-      <div className="flex flex-row w-full justify-center gap-10">
+      <div className="flex flex-row w-full justify-evenly gap-10">
         {Object.values(partners).map((it, key) => (
           <PartnerCard key={key + 1} src={it.default} />
         ))}

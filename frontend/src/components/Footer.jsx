@@ -4,7 +4,7 @@ import "../styles/footer.css";
 
 export const Footer = () => {
   return (
-    <div className="w-screen bg-footer flex flex-row justify-around">
+    <div className="w-screen bg-footer flex flex-row justify-around pb-2">
       <div className="sub-titles flex flex-col items-center w-full">
         <span className="sub-titles">Quick Links</span>
         <Link className="h3 quick-links" to="/scores">
