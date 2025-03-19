@@ -6,8 +6,9 @@ export const Fixtures = () => {
   const [fixtures, setFixtures] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchData = async () => {
+      setTimeout(() => {}, 10000);
       await fetch("https://f4bc-41-81-197-188.ngrok-free.app/api/fixtures")
         .then((res) => res.json())
         .then((out) => setFixtures(out))
@@ -17,8 +18,8 @@ export const Fixtures = () => {
         });
     };
     fetchData();
-  }, []);
-  /*
+  }, []);*/
+
   useEffect(() => {
     axios
       .get("/api/fixtures")
@@ -27,11 +28,10 @@ export const Fixtures = () => {
         setError(null);
       })
       .catch((error) => {
-        setError("Failed to load fixtures. Please try again.");
-        setFixtures([]);
+        setError("Failed to load fixtures. Please try again.", error);
       });
   }, []);
-*/
+
   return (
     <div className="flex flex-col items-center flex-1 py-2 titles">
       {/* Styled Title */}
@@ -46,7 +46,16 @@ export const Fixtures = () => {
         {error ? (
           <p className="h3">{error}</p>
         ) : fixtures === null ? (
-          <p>Loading fixtures...</p>
+          <div>
+            <span className="loading loading-spinner text-primary"></span>
+            <span className="loading loading-spinner text-secondary"></span>
+            <span className="loading loading-spinner text-accent"></span>
+            <span className="loading loading-spinner text-neutral"></span>
+            <span className="loading loading-spinner text-info"></span>
+            <span className="loading loading-spinner text-success"></span>
+            <span className="loading loading-spinner text-warning"></span>
+            <span className="loading loading-spinner text-error"></span>
+          </div>
         ) : fixtures.length > 0 ? (
           fixtures.map((fixture) => (
             <ul key={fixture.id}>
