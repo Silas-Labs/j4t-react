@@ -9,6 +9,8 @@ export { PartnerCard } from "./PartnerCard";
 export { Partners } from "./Partners";
 export { Player } from "./PlayerCard";
 export { PlayerStats } from "./PlayerStats";
+export { ScheduleFilter } from "./ScheduleFilter";
 export { StatCard } from "./StatCard";
 export { TeamCard } from "./TeamCard";
 export { Video } from "./VideoCard";
+export { ScoreCard } from "./ScoreCard";

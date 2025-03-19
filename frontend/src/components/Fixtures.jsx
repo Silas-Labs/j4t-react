@@ -47,14 +47,7 @@ export const Fixtures = () => {
           <p className="h3">{error}</p>
         ) : fixtures === null ? (
           <div>
-            <span className="loading loading-spinner text-primary"></span>
-            <span className="loading loading-spinner text-secondary"></span>
-            <span className="loading loading-spinner text-accent"></span>
-            <span className="loading loading-spinner text-neutral"></span>
-            <span className="loading loading-spinner text-info"></span>
-            <span className="loading loading-spinner text-success"></span>
-            <span className="loading loading-spinner text-warning"></span>
-            <span className="loading loading-spinner text-error"></span>
+            <span className="loading loading-spinner text-fern-green text-7xl"></span>
           </div>
         ) : fixtures.length > 0 ? (
           fixtures.map((fixture) => (
