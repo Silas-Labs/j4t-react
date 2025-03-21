@@ -5,8 +5,8 @@ import { ClubStats, PlayerStats, StatCard } from "../components";
 function Stats({ season }) {
   season = "2024/25";
   return (
-    <div className="flex flex-col min-h-screen w-full justify-center ">
-      <div className="hero h-full w-full justify-start items-center pl-20 pt-20 text-white titles">
+    <div className="flex flex-col h-full w-full justify-center ">
+      <div className="hero-stat min-h-screen w-full justify-center items-center pl-20 pt-20 text-white titles">
         <span className="text-white">Statistics</span>
       </div>
       <div className="p-2">

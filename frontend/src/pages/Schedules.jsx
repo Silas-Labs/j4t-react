@@ -7,8 +7,8 @@ import gor from "../assets/teams/gor.png";
 
 function Schedules() {
   return (
-    <div className="flex flex-col w-full h-full justify-center py-2">
-      <div className="hero w-full h-auto object-contain">
+    <div className="flex flex-col w-full h-screen justify-center py-2">
+      <div className="hero-schedule w-full h-screen object-cover">
         <span className="titles !text-white mr-auto pl-30">
           Schedules & Scores
         </span>

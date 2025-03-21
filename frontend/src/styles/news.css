@@ -1,0 +1,6 @@
+.hero-news {
+    background-image: url('../assets/news.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}

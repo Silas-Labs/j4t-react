@@ -13,7 +13,6 @@ export const Fixtures = () => {
         .then((res) => res.json())
         .then((out) => setFixtures(out))
         .catch((err) => {
-          console.log(err);
           setError("Failed to load fixtures. Please try again.");
         });
     };

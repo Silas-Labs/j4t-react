@@ -18,7 +18,6 @@ export const FeaturedPlayer = () => {
         const data = response.map((res) => res.data.player[0]);
 
         if (data) {
-          console.log(data);
           setPlayer(data);
         } else {
           console.error("Player not found");

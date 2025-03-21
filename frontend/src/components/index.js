@@ -14,3 +14,5 @@ export { StatCard } from "./StatCard";
 export { TeamCard } from "./TeamCard";
 export { Video } from "./VideoCard";
 export { ScoreCard } from "./ScoreCard";
+export { SearchBox } from "./SearchBox";
+export { NewsCard } from "./NewsCard";
