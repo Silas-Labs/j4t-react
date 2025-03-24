@@ -4,7 +4,7 @@ import { FeaturedPlayer, Fixtures, LatestVideos } from "../components";
 
 function Home() {
   return (
-    <>
+    <div className="w-full h-full">
       <div
         className="hero-section flex flex-col"
         style={{
@@ -26,7 +26,6 @@ function Home() {
       >
         <h2 className="titles">
           <span className="text-white">
-            {" "}
             Get the latest football stats and news
           </span>
         </h2>
@@ -34,7 +33,7 @@ function Home() {
       <Fixtures />
       <LatestVideos />
       <FeaturedPlayer />
-    </>
+    </div>
   );
 }
 export default Home;

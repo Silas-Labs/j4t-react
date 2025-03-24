@@ -2,10 +2,10 @@ import React from "react";
 
 export const SearchBox = () => {
   return (
-    <div className="flex flex-row items-center input border-0 h-7 rounded-lg ">
+    <div className="flex flex-row items-center input border-0 h-8 rounded-lg ">
       <input type="search" required placeholder="Search" />
       <svg
-        className="h-[1em] opacity-50"
+        className="h-[1em] opacity-90 !text-black"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
       >

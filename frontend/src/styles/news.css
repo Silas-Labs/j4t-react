@@ -4,3 +4,9 @@
     background-repeat: no-repeat;
     background-position: center;
 }
+
+.sub-titles {
+    color: black;
+    font-size: 22px;
+    font-weight: 400;
+}

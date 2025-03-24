@@ -21,7 +21,7 @@ export const Fixtures = () => {
 
   useEffect(() => {
     axios
-      .get("/api/fixtures")
+      .get("/fixtures")
       .then((response) => {
         setFixtures(Array.isArray(response.data) ? response.data : []);
         setError(null);

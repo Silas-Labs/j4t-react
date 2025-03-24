@@ -13,8 +13,9 @@ function News() {
           <SearchBox />
         </div>
       </div>
-      <span>Latest News</span>
+      <span className="p-2 sub-titles">Latest News</span>
       <NewsCard
+        team={"Arsenal"}
         image={ars}
         details="Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
         Etiam mollis, orci eget malesuada interdum, risus libero consequat mi, 

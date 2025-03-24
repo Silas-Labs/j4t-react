@@ -2,11 +2,13 @@ import React from "react";
 
 export const NewsCard = ({ image, details, team }) => {
   return (
-    <div className="flex flex-col w-full items-start">
-      <span className="">{"Arsenal"}</span>
-      <div className="flex flex-row w-full justify-evenly items-center ">
+    <div className="flex flex-row justify-center w-full">
+      <div className="flex flex-col flex-1 items-center  ">
+        <span className="font-bold"> {team}</span>
         <img src={image} width={180} height="120" />
-        <span className="h-full overflow-auto w-1/2">{details}</span>
+      </div>
+      <div className=" flex-1 flex items-center">
+        <span className="">{details}</span>
       </div>
     </div>
   );

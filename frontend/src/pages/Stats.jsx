@@ -10,7 +10,7 @@ function Stats({ season }) {
         <span className="text-white">Statistics</span>
       </div>
       <div className="p-2">
-        <span className="text-lg font-bold">{season} Top Stats</span>
+        <span className="text-lg font-bold">--{season}-- Top Stats</span>
         <div className="grid grid-cols-4 place-items-center pb-2 ">
           <StatCard
             player_name="Leo Messo"
