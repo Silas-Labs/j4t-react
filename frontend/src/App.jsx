@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Home, News, Schedules, Clubs, Stats } from "./pages";
+import { Home, News, Schedules, Clubs, Stats, Count } from "./pages";
 import { Navbar, Partners, Footer } from "./components";
 
 function App() {
@@ -15,6 +15,7 @@ function App() {
             <Route path="/schedules" element={<Schedules />} />
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/stats" element={<Stats />} />
+            <Route path="/players" element={<Count />} />
           </Routes>
         </div>
         <Partners />

@@ -10,9 +10,10 @@ export const FeaturedPlayer = () => {
     const fetchData = async () => {
       try {
         const response = await Promise.all([
-          api.get("3/searchplayers.php?p=Lionel_Messi"),
-          api.get("3/searchplayers.php?p=Danny_Welbeck"),
+          api.get("3/searchplayers.php?p=Zlatan_Ibra"),
           api.get("3/searchplayers.php?p=Cristiano_Ronaldo"),
+          api.get("3/searchplayers.php?p=Wayne_Rooney"),
+          api.get("3/searchplayers.php?p=Giggs"),
         ]);
 
         const data = response.map((res) => res.data.player[0]);
@@ -32,10 +33,13 @@ export const FeaturedPlayer = () => {
   }, []);
 
   return (
-    <div className="w-full flex flex-row items-center justify-evenly py-2">
-      {player.map((it) => (
-        <Player player={it.strThumb} name={it.strPlayer} key={it.idPlayer} />
-      ))}
+    <div className="w-full flex flex-col py-2 items-center font-bold">
+      <span className="pb-2">Featured Players</span>
+      <div className="w-full flex flex-row items-center justify-evenly">
+        {player.map((it) => (
+          <Player player={it.strThumb} name={it.strPlayer} key={it.idPlayer} />
+        ))}
+      </div>
     </div>
   );
 };

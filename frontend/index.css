@@ -12,7 +12,10 @@
 @theme {
     --color-fern-green: #213706;
     --color-filter: #3D4244;
-    --color-footer: #DBDBDB
+    --color-footer: #DBDBDB;
+    --color-primary: "#1E40AF";
+    --color-secondary: "#9333EA";
+    --color-error: #991b1b;
 }
 
 :root {

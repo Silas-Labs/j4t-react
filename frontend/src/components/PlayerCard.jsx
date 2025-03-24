@@ -6,7 +6,7 @@ export const Player = ({ player, name }) => {
       <img
         src={player}
         alt={name}
-        className="w-full h-full rounded-2xl shadow-sm"
+        className="w-full h-full rounded-2xl shadow-sm shadow-fern-green"
       />
     </div>
   );

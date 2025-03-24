@@ -30,9 +30,25 @@ export const Footer = () => {
       </div>
       <div className="sub-titles flex flex-col items-center w-full">
         <span>Social Media</span>
-        <span className="quick-links h3">X</span>
+        <span className="quick-links h3">
+          <a
+            href="https://www.linkedin.com/company/ligiopen/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </span>
         <span className="quick-links h3">Facebook</span>
-        <span className="quick-links h3">Instagram</span>
+        <span className="quick-links h3">
+          <a
+            href="https://www.instagram.com/ligiopen/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </span>
       </div>
     </div>
   );
