@@ -1,5 +1,4 @@
 import React from "react";
-import { useCount } from "../store/count";
 
 const Count = () => {
   const { count, add, decrease, reset } = useCount();

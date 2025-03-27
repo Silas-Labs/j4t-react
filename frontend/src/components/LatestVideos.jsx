@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Video } from "./VideoCard";
 import "../styles/videos.css";
-import api from "../services/apiAxios";
+import { Api } from "../services";
 
 export const LatestVideos = () => {
   const [news, setNews] = useState([]);
@@ -10,7 +10,7 @@ export const LatestVideos = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await api.get();
+        const { data } = await Api.get("/news");
         if (data) {
           setNews(data);
         } else {

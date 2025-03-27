@@ -1,41 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
 import { TeamCard } from "./TeamCard";
+import { useFixtures } from "../store";
 
 export const Fixtures = () => {
-  const [fixtures, setFixtures] = useState(null);
-  const [error, setError] = useState(null);
-
-  /*useEffect(() => {
-    const fetchData = async () => {
-      setTimeout(() => {}, 10000);
-      await fetch("https://f4bc-41-81-197-188.ngrok-free.app/api/fixtures")
-        .then((res) => res.json())
-        .then((out) => setFixtures(out))
-        .catch((err) => {
-          setError("Failed to load fixtures. Please try again.");
-        });
-    };
-    fetchData();
-  }, []);*/
-
-  useEffect(() => {
-    axios
-      .get("/fixtures")
-      .then((response) => {
-        setFixtures(Array.isArray(response.data) ? response.data : []);
-        setError(null);
-      })
-      .catch((error) => {
-        setError("Failed to load fixtures. Please try again.", error);
-      });
-  }, []);
-
+  const { fixtures, error, fetchFixtures } = useFixtures();
+  fetchFixtures();
   return (
-    <div className="flex flex-col items-center flex-1 py-2 titles">
+    <div className="flex flex-col items-center flex-1 py-2 ">
       {/* Styled Title */}
       <h2
-        className="fixtures-title"
+        className="titles"
         style={{ color: "black", fontSize: "24px", fontWeight: "bold" }}
       >
         Upcoming Fixtures
@@ -50,10 +24,10 @@ export const Fixtures = () => {
           </div>
         ) : fixtures.length > 0 ? (
           fixtures.map((fixture) => (
-            <ul key={fixture.id}>
-              <li className="flex flex-row items-center">
+            <ul key={fixture.id} className="gap-4">
+              <li className="flex flex-row items-center py-2">
                 <div className="flex flex-row items-center">
-                  <p>{fixture.home_team}</p>
+                  {/* <p>{fixture.home_team}</p> */}
                   <TeamCard
                     name={fixture.home_team}
                     team_logo={fixture.home_team_logo}
@@ -68,7 +42,7 @@ export const Fixtures = () => {
                     name={fixture.away_team}
                     team_logo={fixture.away_team_logo}
                   />
-                  <p>{fixture.away_team}</p>
+                  {/* <p>{fixture.away_team}</p> */}
                 </div>
               </li>
             </ul>

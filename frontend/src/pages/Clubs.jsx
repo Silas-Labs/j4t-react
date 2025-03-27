@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ClubCard } from "../components";
-import { useClubs } from "../store/clubs";
+import { useClubs } from "../store/Clubs";
 
 function Clubs() {
   const [clubName, setClubName] = useState("");

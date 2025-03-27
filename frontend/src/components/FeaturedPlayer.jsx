@@ -1,34 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Player } from "./PlayerCard";
-import api from "../services/apiAxios";
+import { Api } from "../services";
 
 export const FeaturedPlayer = () => {
   const [player, setPlayer] = useState([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await Promise.all([
-          api.get("3/searchplayers.php?p=Zlatan_Ibra"),
-          api.get("3/searchplayers.php?p=Cristiano_Ronaldo"),
-          api.get("3/searchplayers.php?p=Wayne_Rooney"),
-          api.get("3/searchplayers.php?p=Giggs"),
-        ]);
-
-        const data = response.map((res) => res.data.player[0]);
-
-        if (data) {
-          setPlayer(data);
-        } else {
-          console.error("Player not found");
-          setError("Player not found");
-        }
-      } catch (error) {
-        console.error(error);
-        setError(error);
-      }
-    };
+    const fetchData = async () => {};
     fetchData();
   }, []);
 
