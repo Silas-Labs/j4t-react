@@ -1,10 +1,13 @@
 import React, { useEffect } from "react";
 import { TeamCard } from "./TeamCard";
 import { useFixtures } from "../store";
+import { Toast } from "./Toast";
 
 export const Fixtures = () => {
-  const { fixtures, error, fetchFixtures } = useFixtures();
-  fetchFixtures();
+  const { fixtures, error, loadFixtures, loading } = useFixtures();
+  useEffect(() => {
+    loadFixtures();
+  }, []);
   return (
     <div className="flex flex-col items-center flex-1 py-2 ">
       {/* Styled Title */}
@@ -18,7 +21,7 @@ export const Fixtures = () => {
       <div className="flex flex-col justify-center">
         {error ? (
           <p className="h3">{error}</p>
-        ) : fixtures === null ? (
+        ) : loading ? (
           <div>
             <span className="loading loading-spinner text-fern-green text-7xl"></span>
           </div>

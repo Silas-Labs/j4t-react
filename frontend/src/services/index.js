@@ -5,3 +5,4 @@ export {
   fetchNews,
   fetchPlayers,
 } from "./ApiRequests";
+export { ApiErrors } from "./ApiErrors";

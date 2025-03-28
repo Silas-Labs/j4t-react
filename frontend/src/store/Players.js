@@ -1,15 +1,16 @@
 import { create } from "zustand";
-import { Api } from "../services";
+import { ApiErrors, fetchPlayers } from "../services";
 
 export const usePlayers = create((set) => ({
   players: [],
-  fetchPlayers: async () => {
+  loadPlayers: async () => {
+    set({ players: JSON.parse(localStorage.getItem("players")) });
     try {
-      const { data } = await Api.get("/players");
-      // console.log(data);
-      //set({ players: data });
+      const { data } = await fetchPlayers();
+      set({ players: data });
+      localStorage.setItem("players", JSON.stringify(data));
     } catch (error) {
-      console.error("Players Fetch Error: ", error);
+      ApiErrors(error);
     }
   },
 }));

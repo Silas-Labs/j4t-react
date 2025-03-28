@@ -1,17 +1,20 @@
 import { create } from "zustand";
 import { fetchFixtures } from "../services";
+import { ApiErrors } from "../services";
 
 export const useFixtures = create((set) => ({
   fixtures: [],
   error: "",
-  fetchFixtures: async (state) => {
+  loading: false,
+  loadFixtures: async () => {
     try {
+      set({ loading: true });
       const data = await fetchFixtures();
-      set({ fixtures: data });
-      localStorage.setItem("fixtures", JSON.stringify(state.fixtures));
+      set({ loading: false, fixtures: data });
+      localStorage.setItem("fixtures", JSON.stringify(data));
     } catch (err) {
-      set({ error: err.Error });
-      set({ fixtures: localStorage.parse(localStorage.getItem("fixtures")) });
+      ApiErrors(err);
+      set({ loading: false });
     }
   },
 }));

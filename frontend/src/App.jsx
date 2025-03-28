@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, News, Schedules, Clubs, Stats, Count } from "./pages";
 import { Navbar, Partners, Footer } from "./components";
+import Players from "./pages/Players";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
             <Route path="/schedules" element={<Schedules />} />
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/stats" element={<Stats />} />
-            <Route path="/players" element={<Count />} />
+            <Route path="/players" element={<Players />} />
           </Routes>
         </div>
         <Partners />
