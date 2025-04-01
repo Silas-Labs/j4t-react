@@ -11,8 +11,7 @@ export const ApiErrors = (error) => {
     };
   } else if (error.request) {
     // No response received
-    console.error("Network Error: No response from server");
-    return { success: false, message: "Network error: Server unreachable" };
+    return { success: true, message: "Network error: Server unreachable" };
   } else {
     // Other errors (unexpected)
     console.error("Unexpected Error:", error.message);

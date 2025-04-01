@@ -4,5 +4,6 @@ export {
   fetchFixtures,
   fetchNews,
   fetchPlayers,
+  fetchResults,
 } from "./ApiRequests";
 export { ApiErrors } from "./ApiErrors";

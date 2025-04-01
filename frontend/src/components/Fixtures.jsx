@@ -1,15 +1,13 @@
 import React, { useEffect } from "react";
 import { TeamCard } from "./TeamCard";
 import { useFixtures } from "../store";
-import { Toast } from "./Toast";
+import { Toast } from ".";
 
 export const Fixtures = () => {
   const { fixtures, error, loadFixtures, loading } = useFixtures();
   useEffect(() => {
     loadFixtures();
   }, []);
-
-  //console.log("Error Fixtures: ", error);
 
   return (
     <div className="flex flex-col items-center flex-1 py-2 ">

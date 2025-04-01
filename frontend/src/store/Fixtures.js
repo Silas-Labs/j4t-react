@@ -11,14 +11,22 @@ export const useFixtures = create((set) => ({
     try {
       set({ loading: true });
       const data = await fetchFixtures();
-      set({ loading: false, fixtures: data });
-      set({ lastUpdateTime: Date.now() });
+      const now = Date.now();
+      set(() => ({
+        loading: false,
+        fixtures: data,
+        lastUpdateTime: now,
+        error: {
+          success: true,
+          message: `Last synced at: ${new Date(now).getHours()}:${new Date(
+            now
+          ).getMinutes()}Hrs`,
+        },
+      }));
       localStorage.setItem("fixtures", JSON.stringify(data));
     } catch (err) {
-      const errorResponse = ApiErrors(err);
-      console.log(errorResponse);
-      set({ loading: false });
-      set({ error: errorResponse });
+      const { success, message } = ApiErrors(err);
+      set({ loading: false, error: { success, message } });
     }
   },
 }));
