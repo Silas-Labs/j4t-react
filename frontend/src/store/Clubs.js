@@ -1,16 +1,24 @@
 import { create } from "zustand";
-import { fetchClubs } from "../services";
+import { ApiErrors, fetchClubs } from "../services";
 
 export const useClubs = create((set) => ({
   clubs: [],
+  error: {},
+  loading: false,
   addClub: (club) => {
     set((state) => ({ clubs: [...state.clubs, club] }));
   },
   fetchClubs: async () => {
     try {
-      return await fetchClubs();
+      set({ loading: true });
+      const data = await fetchClubs();
+      set({ loading: false, clubs: data });
+      set({ clubs: data });
+      localStorage.setItem("clubs", JSON.stringify(data));
     } catch (error) {
-      console.error(error);
+      set({ loading: false });
+      const errorResponse = ApiErrors(error);
+      set({ error: errorResponse });
     }
   },
 }));

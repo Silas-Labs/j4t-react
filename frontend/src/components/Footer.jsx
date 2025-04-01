@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/footer.css";
+import { Toast } from "./Toast";
 
 export const Footer = () => {
   return (
@@ -26,6 +27,10 @@ export const Footer = () => {
           >
             📍Kisumu-Kenya
           </a>
+        </span>
+        <span className="bg-blue-200">
+          {" "}
+          <a href="/toast">Notify</a>
         </span>
       </div>
       <div className="sub-titles flex flex-col items-center w-full">

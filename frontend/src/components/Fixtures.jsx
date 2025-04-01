@@ -8,6 +8,9 @@ export const Fixtures = () => {
   useEffect(() => {
     loadFixtures();
   }, []);
+
+  //console.log("Error Fixtures: ", error);
+
   return (
     <div className="flex flex-col items-center flex-1 py-2 ">
       {/* Styled Title */}
@@ -19,41 +22,44 @@ export const Fixtures = () => {
       </h2>
 
       <div className="flex flex-col justify-center">
-        {error ? (
-          <p className="h3">{error}</p>
-        ) : loading ? (
+        {loading ? (
           <div>
             <span className="loading loading-spinner text-fern-green text-7xl"></span>
           </div>
-        ) : fixtures.length > 0 ? (
-          fixtures.map((fixture) => (
-            <ul key={fixture.id} className="gap-4">
-              <li className="flex flex-row items-center py-2">
-                <div className="flex flex-row items-center">
-                  {/* <p>{fixture.home_team}</p> */}
-                  <TeamCard
-                    name={fixture.home_team}
-                    team_logo={fixture.home_team_logo}
-                  />
-                </div>
-                <div className="flex flex-col items-center">
-                  <span>vs</span>
-                  <span className="text-[11px]">{fixture.match_time}</span>
-                </div>
-                <div className="flex flex-row items-center">
-                  <TeamCard
-                    name={fixture.away_team}
-                    team_logo={fixture.away_team_logo}
-                  />
-                  {/* <p>{fixture.away_team}</p> */}
-                </div>
-              </li>
-            </ul>
-          ))
         ) : (
-          <p className="text-lg text-blue-950">
-            No upcoming fixtures available.
-          </p>
+          <>
+            {error && <Toast error={error} />}
+            {fixtures.length > 0 ? (
+              fixtures.map((fixture) => (
+                <ul key={fixture.id} className="gap-4">
+                  <li className="flex flex-row items-center py-2">
+                    <div className="flex flex-row items-center">
+                      {/* <p>{fixture.home_team}</p> */}
+                      <TeamCard
+                        name={fixture.home_team}
+                        team_logo={fixture.home_team_logo}
+                      />
+                    </div>
+                    <div className="flex flex-col items-center">
+                      <span>vs</span>
+                      <span className="text-[11px]">{fixture.match_time}</span>
+                    </div>
+                    <div className="flex flex-row items-center">
+                      <TeamCard
+                        name={fixture.away_team}
+                        team_logo={fixture.away_team_logo}
+                      />
+                      {/* <p>{fixture.away_team}</p> */}
+                    </div>
+                  </li>
+                </ul>
+              ))
+            ) : (
+              <p className="text-lg text-blue-950">
+                No upcoming fixtures available.
+              </p>
+            )}
+          </>
         )}
       </div>
     </div>

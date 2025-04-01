@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, News, Schedules, Clubs, Stats, Count } from "./pages";
 import { Navbar, Partners, Footer } from "./components";
 import Players from "./pages/Players";
+import { Toast } from "./components/Toast";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/stats" element={<Stats />} />
             <Route path="/players" element={<Players />} />
+            <Route path="/toast" element={<Toast />} />
           </Routes>
         </div>
         <Partners />

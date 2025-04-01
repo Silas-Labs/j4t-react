@@ -17,3 +17,4 @@ export { ScoreCard } from "./ScoreCard";
 export { SearchBox } from "./SearchBox";
 export { NewsCard } from "./NewsCard";
 export { ClubCard } from "./ClubCard";
+export { ScheduleRow } from "./ScheduleRow";

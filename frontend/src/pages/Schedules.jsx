@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-import { ScheduleFilter, ScoreCard, TeamCard } from "../components";
+import {
+  ScheduleFilter,
+  ScheduleRow,
+  ScoreCard,
+  TeamCard,
+} from "../components";
 import "../styles/schedules.css";
-import ars from "../assets/teams/arsenal.png";
-import gor from "../assets/teams/gor.png";
+import { useFixtures } from "../store";
 
 function Schedules() {
+  const FIVE_MINUTES = 5 * 60 * 1000;
+  const { fixtures, lastUpdateTime, loadFixtures } = useFixtures();
+  useEffect(() => {
+    if (Date.now() - lastUpdateTime > FIVE_MINUTES) {
+      loadFixtures();
+      console.log("Last Updated: ", Date.now());
+    }
+  }, []);
   return (
     <div className="flex flex-col w-full h-screen justify-center pb-2">
       <div className="hero-schedule w-full h-screen ">
@@ -20,16 +32,7 @@ function Schedules() {
       </div>
       <div className="flex flex-col w-full">
         <span>Wednesday Feb 25</span>
-        <div className="flex flex-row w-full  items-center">
-          <span>Final</span>
-          <div className="flex flex-row justify-center items-center flex-1">
-            <span>Gor Mahia</span>
-            <TeamCard name="Gor Mahia" team_logo={gor} className="w-24" />
-            <ScoreCard home={"0"} away={"2"} />
-            <TeamCard name="Arsenal" team_logo={ars} className="w-24" />
-            <span>Arsenal</span>
-          </div>
-        </div>
+        <ScheduleRow />
       </div>
     </div>
   );

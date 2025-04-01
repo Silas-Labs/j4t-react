@@ -1,18 +1,17 @@
 import { create } from "zustand";
-import { fetchNews } from "../services";
+import { ApiErrors, fetchNews } from "../services";
 
 export const useNews = create((set) => ({
   news: [],
-  error: "",
-  fetchNews: () => async () => {
+  loadNews: async () => {
     try {
-      const response = await fetchNews();
-      if (!response.ok) {
-        throw new Error("Network error while fetching news");
-      }
-      set({ news: response });
+      const data = await fetchNews();
+      set({ news: data });
+      localStorage.setItem("news", JSON.stringify(data));
     } catch (error) {
-      set({ error: error.Error() });
+      ApiErrors(error);
+      const storedNews = JSON.parse(localStorage.getItem("news")) || [];
+      set({ news: storedNews });
     }
   },
 }));

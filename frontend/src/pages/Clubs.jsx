@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { ClubCard } from "../components";
-import { useClubs } from "../store/Clubs";
+import { useClubs } from "../store";
 
 function Clubs() {
   const [clubName, setClubName] = useState("");
   const [clubLogo, setClubLogo] = useState("");
-  const { clubs, addClub } = useClubs();
+  const { clubs, addClub, fetchClubs } = useClubs();
 
   useEffect(() => {
-    const storedClubs = JSON.parse(localStorage.getItem("teams")) || [];
-    storedClubs.forEach((it) => addClub(it));
+    fetchClubs();
   }, []);
 
   const handleAddClub = () => {
@@ -20,15 +19,11 @@ function Clubs() {
     }
   };
   return (
-    <div className="flex flex-col items-center flex-1 py-2 gap-2">
+    <div className="flex flex-col items-center flex-1 py-2 gap-2 w-full">
       <span className="titles">Clubs</span>
       <div className="grid grid-cols-4 gap-3">
-        {clubs.map((it, index) => (
-          <ClubCard
-            team_logo={it.clubLogo}
-            team_name={it.clubName}
-            key={index + 1}
-          />
+        {clubs?.map((it) => (
+          <ClubCard team_logo={it.logo} team_name={it.name} key={it.id} />
         ))}
       </div>
       <div className="flex flex-col gap-1">

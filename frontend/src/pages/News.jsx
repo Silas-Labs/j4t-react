@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../styles/news.css";
 import { NewsCard, SearchBox } from "../components";
 import ars from "../assets/teams/arsenal.png";
+import { useNews } from "../store/News";
 
 function News() {
+  const { news, loadNews } = useNews();
+
+  useEffect(() => {
+    loadNews();
+  }, []);
+
   return (
     <div className="flex flex-col w-full h-screen items-center justify-center">
       <div className="h-full w-full flex flex-col items-center justify-center hero-news">
