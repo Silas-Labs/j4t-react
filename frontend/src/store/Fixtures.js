@@ -18,9 +18,13 @@ export const useFixtures = create((set) => ({
         lastUpdateTime: now,
         error: {
           success: true,
-          message: `Last synced at: ${new Date(now).getHours()}:${new Date(
-            now
-          ).getMinutes()}Hrs`,
+          message: `Last synced at: ${new Date(now)
+            .getHours()
+            .toString()
+            .padStart(2, "0")}:${new Date(now)
+            .getMinutes()
+            .toString()
+            .padStart(2, "0")}Hrs`,
         },
       }));
       localStorage.setItem("fixtures", JSON.stringify(data));

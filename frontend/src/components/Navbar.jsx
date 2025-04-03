@@ -5,7 +5,7 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 export const Navbar = () => {
   let url = useLocation();
   return (
-    <nav className="bg-gradient-to-b from-white/60 to-white/10 backdrop-blur-md flex flex-row w-screen shadow-lg mb-1 fixed top-0 left-0 z-100">
+    <nav className="bg-gradient-to-b from-white/60 to-white/10 backdrop-blur-md flex flex-row w-full shadow-lg mb-1 fixed top-0 left-0 z-100">
       {/* Logo Section */}
       <div className="flex items-center px-4">
         <img
@@ -16,7 +16,7 @@ export const Navbar = () => {
       </div>
 
       {/* Navigation Section */}
-      <ul className="nav-links flex flex-row w-full justify-center gap-x-8 items-center ">
+      <ul className="nav-links flex flex-row w-full justify-center gap-x-8 items-center">
         <li>
           <Link to="/" className={url.pathname == "/" ? "nav-link-active" : ""}>
             Home

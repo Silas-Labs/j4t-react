@@ -2,7 +2,6 @@
 export const ApiErrors = (error) => {
   if (error.response) {
     // Server responded with a status code outside 2xx
-    console.error("API Error:", error.response.data);
     return {
       success: false,
       message:
@@ -14,7 +13,6 @@ export const ApiErrors = (error) => {
     return { success: true, message: "Network error: Server unreachable" };
   } else {
     // Other errors (unexpected)
-    console.error("Unexpected Error:", error.message);
     return { success: false, message: "Unexpected error occurred" };
   }
 };

@@ -8,7 +8,7 @@ export const useClubs = create((set) => ({
   addClub: (club) => {
     set((state) => ({ clubs: [...state.clubs, club] }));
   },
-  fetchClubs: async () => {
+  loadClubs: async () => {
     try {
       set({ loading: true });
       const data = await fetchClubs();
@@ -19,6 +19,7 @@ export const useClubs = create((set) => ({
       set({ loading: false });
       const errorResponse = ApiErrors(error);
       set({ error: errorResponse });
+      set({ clubs: JSON.parse(localStorage.getItem("clubs")) || [] });
     }
   },
 }));

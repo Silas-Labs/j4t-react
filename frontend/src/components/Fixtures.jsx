@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { TeamCard } from "./TeamCard";
 import { useFixtures } from "../store";
-import { Toast } from ".";
+import { Toast, Loading } from ".";
 
 export const Fixtures = () => {
   const { fixtures, error, loadFixtures, loading } = useFixtures();
@@ -10,7 +10,7 @@ export const Fixtures = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center flex-1 py-2 ">
+    <div className="flex flex-col items-center flex-1 py-2 w-full">
       {/* Styled Title */}
       <h2
         className="titles"
@@ -19,18 +19,16 @@ export const Fixtures = () => {
         Upcoming Fixtures
       </h2>
 
-      <div className="flex flex-col justify-center">
+      <div className="flex flex-col justify-center w-full items-center">
         {loading ? (
-          <div>
-            <span className="loading loading-spinner text-fern-green text-7xl"></span>
-          </div>
+          <Loading />
         ) : (
           <>
             {error && <Toast error={error} />}
             {fixtures.length > 0 ? (
               fixtures.map((fixture) => (
-                <ul key={fixture.id} className="gap-4">
-                  <li className="flex flex-row items-center py-2">
+                <ul key={fixture.id} className="gap-4 w-full">
+                  <li className="flex flex-row justify-center w-full hover:bg-green-200">
                     <div className="flex flex-row items-center">
                       {/* <p>{fixture.home_team}</p> */}
                       <TeamCard

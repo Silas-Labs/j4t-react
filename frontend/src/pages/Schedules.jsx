@@ -1,21 +1,25 @@
 import React, { useEffect } from "react";
 
 import {
-  ScheduleFilter,
+  ClubFilter,
+  CompetitionFilter,
+  DateFilter,
   ScheduleRow,
   ScoreCard,
   TeamCard,
 } from "../components";
 import "../styles/schedules.css";
-import { useFixtures } from "../store";
+import { useClubs, useFixtures } from "../store";
 
 function Schedules() {
   const FIVE_MINUTES = 5 * 60 * 1000;
   const { fixtures, lastUpdateTime, loadFixtures } = useFixtures();
+  const { clubs, loadClubs } = useClubs();
   useEffect(() => {
     if (Date.now() - lastUpdateTime > FIVE_MINUTES) {
       loadFixtures();
-      console.log("Last Updated: ", Date.now());
+      loadClubs();
+      console.log("Last Schedules Updated: ", Date.now());
     }
   }, []);
   return (
@@ -25,10 +29,10 @@ function Schedules() {
           Schedules & Scores
         </span>
       </div>
-      <div className="flex flex-row w-full justify-center">
-        <ScheduleFilter title="FEB 23-28" />
-        <ScheduleFilter title="All Competitions" />
-        <ScheduleFilter title="All Clubs" />
+      <div className="flex flex-row w-full justify-center py-2 gap-x-2">
+        <DateFilter title="FEB 23-28" list={clubs} />
+        <CompetitionFilter title="All Competitions" list={clubs} />
+        <ClubFilter title="All Clubs" list={clubs} />
       </div>
       <div className="flex flex-col w-full">
         <span>Wednesday Feb 25</span>

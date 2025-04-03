@@ -1,21 +1,18 @@
 import React, { useEffect } from "react";
-import { toast, ToastContainer, Bounce } from "react-toastify";
+import { toast, ToastContainer, Zoom } from "react-toastify";
 
 export const Toast = ({ error }) => {
-  var notify;
-  if (error.message == "success") {
-    notify = () =>
-      toast.success(error.message, {
-        className: "h-[50px] w-auto text-sm",
-      });
-  } else {
-    notify = () =>
-      toast.error(error.message, {
-        className: "h-[50px] w-auto text-sm",
-      });
-  }
+  const notifySuccess = () =>
+    toast.success(error.message, {
+      className: "h-[50px] w-auto text-sm",
+    });
+
+  const notifyError = () =>
+    toast.error(error.message, {
+      className: "h-[50px] w-auto text-sm",
+    });
   useEffect(() => {
-    notify();
+    error.success ? notifySuccess() : notifyError();
   }, []);
   return (
     <ToastContainer
@@ -29,7 +26,8 @@ export const Toast = ({ error }) => {
       pauseOnHover
       pauseOnFocusLoss={true}
       theme="light"
-      transition={Bounce}
+      transition={Zoom}
     />
   );
 };
+//className: "h-[50px] w-auto text-sm",
