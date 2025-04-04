@@ -31,7 +31,7 @@ function Home() {
         </h2>
       </div>
       <Fixtures />
-      {/* <LatestVideos />*/}
+      <LatestVideos />
       <FeaturedPlayer />
     </div>
   );
