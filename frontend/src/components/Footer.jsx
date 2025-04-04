@@ -23,14 +23,12 @@ export const Footer = () => {
         <span>
           <a
             href="https://maps.app.goo.gl/8SJCsTHK4ByykUpG7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="quick-links h3"
           >
             📍Kisumu-Kenya
           </a>
-        </span>
-        <span className="bg-blue-200">
-          {" "}
-          <a href="/toast">Notify</a>
         </span>
       </div>
       <div className="sub-titles flex flex-col items-center w-full">

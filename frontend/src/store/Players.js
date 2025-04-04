@@ -11,6 +11,7 @@ export const usePlayers = create((set, get) => ({
       localStorage.setItem("players", JSON.stringify(data));
     } catch (error) {
       ApiErrors(error);
+      set({ players: JSON.parse(localStorage.getItem("players")) });
     }
   },
   searchPlayer: (player) => {

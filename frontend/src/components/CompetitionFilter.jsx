@@ -1,8 +1,14 @@
 import React, { useState } from "react";
+import { useFixtures } from "../store";
 
 export const CompetitionFilter = ({ title, list }) => {
   const [selected, setSelected] = useState(title);
   const [isOpen, setIsOpen] = useState(false);
+  const { fixtures } = useFixtures();
+
+  const filteredFixture = fixtures?.filter((it) =>
+    it.name.toLowerCase().includes(selected.toLowerCase())
+  );
 
   const toggleDropDown = () => {
     setIsOpen(!isOpen);

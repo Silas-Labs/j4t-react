@@ -1,22 +1,21 @@
-import React, { useEffect, useState } from "react";
-import { Player } from "./PlayerCard";
+import React, { useEffect } from "react";
+import { Player } from "./";
 import { Api } from "../services";
+import { usePlayers } from "../store";
 
 export const FeaturedPlayer = () => {
-  const [player, setPlayer] = useState([]);
-  const [error, setError] = useState("");
+  const { players, loadPlayers } = usePlayers();
 
   useEffect(() => {
-    const fetchData = async () => {};
-    fetchData();
+    loadPlayers();
   }, []);
 
   return (
     <div className="w-full flex flex-col py-2 items-center font-bold">
       <span className="pb-2">Featured Players</span>
       <div className="w-full flex flex-row items-center justify-evenly">
-        {player.map((it) => (
-          <Player player={it.strThumb} name={it.strPlayer} key={it.idPlayer} />
+        {players.map((it) => (
+          <Player player={it.image} name={it.name} key={it.id} />
         ))}
       </div>
     </div>

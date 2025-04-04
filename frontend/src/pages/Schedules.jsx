@@ -31,7 +31,7 @@ function Schedules() {
       </div>
       <div className="flex flex-row w-full justify-center py-2 gap-x-2">
         <DateFilter title="FEB 23-28" list={clubs} />
-        <CompetitionFilter title="All Competitions" list={clubs} />
+        {/* <CompetitionFilter title="All Competitions" list={clubs} /> */}
         <ClubFilter title="All Clubs" list={clubs} />
       </div>
       <div className="flex flex-col w-full">
